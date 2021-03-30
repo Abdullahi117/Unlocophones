@@ -276,4 +276,24 @@ input[type="text"], input[type="password"], input[type="number"]{
 	padding: 12px;
 	border: 1px solid black;
 }
+.box{
+  padding-left: 880px;
+}
+.column1{
+    display:flex;
+    margin-top: 34px;
+    margin-left: 100px;
+
+}
+.firstimg{
+    padding: 56px;
+}
+figcaption{
+    border-style: solid;
+  border-color: black;
+  
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}
 /* END LOGIN/Register CSS */
