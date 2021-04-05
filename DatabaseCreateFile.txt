@@ -1,0 +1,111 @@
+CREATE TABLE customer
+(customer_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ first_name CHAR(50),
+ last_name CHAR(50),
+ address CHAR(100),
+ city CHAR(30),
+ state CHAR(2),
+ zip CHAR(5),
+ phone INT(10),
+ email CHAR(30),
+ credit_card CHAR(16),
+ shipping_address CHAR(100),
+ shipping_city CHAR(30),
+ shipping_state CHAR(2),
+ shipping_zip INT(5),
+PRIMARY KEY (customer_id)
+);
+
+
+CREATE TABLE payment
+(payment_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ payment_type CHAR(50),
+ allowed TINYINT(1),
+PRIMARY KEY (payment_id)
+);
+
+
+CREATE TABLE shipment
+(shipment_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ company_name CHAR(50),
+ company_phone INT(10),
+PRIMARY KEY (shipment_id)
+);
+
+
+CREATE TABLE orders
+(order_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ customer_id INT UNSIGNED NOT NULL,
+ payment_id INT UNSIGNED NOT NULL,
+ order_date DATE,
+ shipment_id INT UNSIGNED NOT NULL,
+ shipment_date DATE,
+ status CHAR(10),
+PRIMARY KEY (order_id),
+FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
+FOREIGN KEY (payment_id) REFERENCES payment(payment_id),
+FOREIGN KEY (shipment_id) REFERENCES shipment(shipment_id)
+);
+
+
+CREATE TABLE brands
+(brand_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ brand_name CHAR(30),
+ brand_description TEXT(1000),
+ brand_pictures LONGBLOB,
+PRIMARY KEY (brand_id)
+);
+
+
+CREATE TABLE suppliers
+(supplier_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ supplier_name CHAR(50),
+ address CHAR(100),
+ phone INT(10),
+ product_types CHAR(50),
+ payment_details CHAR(50),
+PRIMARY KEY (supplier_id)
+);
+
+
+CREATE TABLE warranties
+(warranty_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ damagescovered TINYINT(1),
+ timeperiod INT(2),
+PRIMARY KEY (warranty_id)
+);
+
+CREATE TABLE products
+(product_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ name CHAR(50),
+ brand_id INT UNSIGNED NOT NULL,
+ year_made YEAR,
+ type CHAR(30),
+ colors CHAR(20),
+ carriers CHAR(20),
+ price FLOAT(6,2),
+ warranty TINYINT(1),
+ warranty_id INT UNSIGNED NOT NULL,
+ supplier_id INT UNSIGNED NOT NULL,
+PRIMARY KEY (product_id),
+FOREIGN KEY (brand_id) REFERENCES brands(brand_id),
+FOREIGN KEY (warranty_id) REFERENCES warranties(warranty_id),
+FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id)
+);
+
+
+CREATE TABLE orderdetails
+(orderdetail_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+ order_id INT UNSIGNED NOT NULL,
+ product_id INT UNSIGNED NOT NULL,
+ quantity INT(10),
+ discount INT(100),
+ color CHAR(20),
+ total FLOAT(6,2),
+
+PRIMARY KEY (orderdetail_id),
+FOREIGN KEY (order_id) REFERENCES orders(order_id),
+FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
+
+
