@@ -40,7 +40,7 @@ CREATE TABLE orders
  order_date DATE,
  shipment_id INT UNSIGNED NOT NULL,
  shipment_date DATE,
- status CHAR(10),
+ status TINYINT(1),
 PRIMARY KEY (order_id),
 FOREIGN KEY (customer_id) REFERENCES customer(customer_id),
 FOREIGN KEY (payment_id) REFERENCES payment(payment_id),
@@ -102,10 +102,7 @@ CREATE TABLE orderdetails
  discount INT(100),
  color CHAR(20),
  total FLOAT(6,2),
-
 PRIMARY KEY (orderdetail_id),
 FOREIGN KEY (order_id) REFERENCES orders(order_id),
 FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
-
-
