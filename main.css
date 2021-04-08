@@ -215,6 +215,66 @@ footer{
    text-align: left;
 }
 
+.accountdetails {
+    text-align: left;
+    margin-left: 2pc;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+.products{
+    display:flex;
+    margin-top: 10pc;
+    margin-left: 8pc;
+
+}
+.productname {
+    font-weight: bold;
+    text-align: center;
+}
+.phoneimg{
+    padding: 20px;
+    width: 35%;
+    height: 300px;
+}
+.phonebox {
+    width: 33%;
+    height: fit-content;
+}
+.editbox {
+    margin: auto;
+    margin-top: 7pc;
+    margin-bottom: 2pc;
+    text-align: center;
+    border: solid 2px black;
+    width: 50%;
+    background-color: white;
+    clear: both;
+    position: relative;
+}
+.editform {
+    width: 700px;
+    text-align: left;
+    margin: 3pc;
+}
+.editform input{
+    width: 75%;
+    margin: 20px;
+    font-size: 14pt;
+    padding: 10px 4px 10px 4px;
+    font-family: serif;
+}
+.editform input[type=submit] {
+    width: 25%;
+    margin: 20px;
+    font-size: 14pt;
+    padding: 10px 4px 10px 4px;
+    font-family: serif;
+    color: hsla(0, 98%, 37%, 0.808);
+    font-weight: bolder;
+}
+.editform input:focus::placeholder {
+    color: transparent;
+}
 
 
 
