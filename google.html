@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
+    <script src="site.js" async></script>
     <title>Unlocked Phones | BUY </title>
 </head>
 
@@ -19,6 +20,7 @@
                     <li><a href="apple.html">Apple</a></li>
                     <li><a href="samsung.html">Samsung</a></li>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="account.php">Account</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,19 +29,45 @@
         <section class="products">
             <div class="phonebox">
                 <img src="google-pixel-4a-5g-uw-black.jpg" alt="p1" class="phoneimg"><br>
-                <span class="productname"> Google Pixel 4a </span> 
+                <span class="phonename"> Google Pixel 4a </span> <br>
+                <span class="phoneprice"> $500.00 </span> <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
 
             </div>
             <div class="phonebox">
                 <img src="GooglePixel4.jpg" alt="p1" class="phoneimg"><br>
-                <span class="productname">Google Pixel 4</span> 
+                <span class="phonename">Google Pixel 4</span> <br>
+                <span class="phoneprice"> $500.00 </span> <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
 
             </div>
             <div class="phonebox">
                 <img src="Google pixel 5.jpg" alt="p1" class="phoneimg"><br>
-                <span class="productname"> Google Pixel 5 </span> 
+                <span class="phonename"> Google Pixel 5 </span> <br>
+                <span class="phoneprice"> $500.00 </span> <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
             </div>
         </section>
         <br><br>
+
+        <section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+                
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <button onclick="window.location.href='order.html'" class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
     </main>
+    <script src="site.js" async></script>
+    </body>
+    </html>
 

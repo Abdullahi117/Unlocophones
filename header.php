@@ -21,6 +21,7 @@
                     <li><a href="apple.html">Apple</a></li>
                     <li><a href="samsung.html">Samsung</a></li>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="account.php">Account</a></li>
                 </ul>
             </nav>
         </div>
