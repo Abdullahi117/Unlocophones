@@ -4,10 +4,11 @@
 $firstName = $lastName = $username = $email = $password1 = $password2 = "";
 $firstNameErr = $lastNameErr = $usernameErr = $emailErr = $password1Err = $password2Err = "";
 
-
+//establish connection with database
 $mysqli = new mysqli('localhost', 'root', '', 'unloco');
 if($mysqli->connect_errno) {
-    echo "FailedtoconnecttoMySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    //error if connection fails
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,40 +20,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //First Name checker 
     if (empty($_POST["firstName"])) {
         $firstNameErr = "Name is required";
+        exit;
     } 
     else {
         $firstName = test_input($_POST["firstName"]);
         if (!preg_match("/^[a-zA-Z]*$/",$firstName)) {
             $firstNameErr = "Only letters are allowed";
+            exit;
         }
     }
     //Last Name checker 
     if (empty($_POST["lastName"])) {
         $lastNameErr = "Name is required";
+        exit;
     } 
     else {
         $lastName = test_input($_POST["lastName"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/^[a-zA-Z-' ]*$/",$lastName)) {
             $lastNameErr = "Only letters and white space allowed";
+            exit;
             }
     }
 
     //Password1 checker 
     if (empty($_POST["password1"])) {
         $password1Err = "Password is required";
+        exit;
     } 
     else {
         $password1 = test_input($_POST["password1"]);
         // check if name only contains letters and whitespace
         if (!preg_match("/[0-9A-Za-z!@#$%]/",$password1)) {
             $password1Err = "Only letters, numbers and special characters allowed";
+            exit;
         }
     }    
 
     //Password2 confirm checker 
     if ($password1 != $password2) {
         $password2Err = "Passwords dont match";
+        exit;
 
     }
           
@@ -60,22 +68,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //Username checker 
     if (empty($_POST["username"])) {
         $usernameErr = "Userame is required";
+        exit;
     } 
     else {
         $username = test_input($_POST["username"]);
         if (!preg_match("/^[a-zA-Z0-9]/",$username)) {
             $usernameErr = "Only letters and numbers allowed";
+            exit;
         }
     }
     
     //Email checker 
     if (empty($_POST["email"])) {
         $emailErr = "Email is required";
+        exit;
     } 
     else {
         $email = test_input($_POST["email"]);
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
+            exit;
         }
     }
 
