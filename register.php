@@ -5,7 +5,17 @@ $firstName = $lastName = $username = $email = $password1 = $password2 = "";
 $firstNameErr = $lastNameErr = $usernameErr = $emailErr = $password1Err = $password2Err = "";
 
 
+$mysqli = new mysqli('localhost', 'root', '', 'unloco');
+if($mysqli->connect_errno) {
+    echo "FailedtoconnecttoMySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = $mysqli->real_escape_string($_POST['firstName']);
+    $lastName = $mysqli->real_escape_string($_POST['lastName']);
+    $username = $mysqli->real_escape_string($_POST['username']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = ($_POST['username']);
     //First Name checker 
     if (empty($_POST["firstName"])) {
         $firstNameErr = "Name is required";
@@ -67,6 +77,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
         }
+    }
+
+    //insert sql query
+    $sql = "INSERT INTO customer (first_name, last_name, email) VALUES "
+                . " ('$firstName', '$lastName', '$email')";
+
+    //check if query is successful
+    if ($mysqli->query($sql) === true) {
+        $_SESSION['message'] = "Registration complete, '$username' added to the database!";
+        header("location: index.html");
+    } else {
+        $_SESSION['message'] = "User could not be added to the database";
     }
 
 }
