@@ -22,30 +22,42 @@ function ready() {
         addbtn.addEventListener('click', addToCart)
     }
     document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+    if (localStorage.getItem('products') == null) {
+        var items = [];
+        localStorage.setItem('products', JSON.stringify(items));
+    }
 }
-function purchaseClicked() {
-    var cartItems = document.getElementsByClassName('cart-items')[0]
+
+function purchaseClicked(event) {
+    var btn = event.target
+    var container = btn.parentNode
+    var cartItems = container.getElementsByClassName('cart-items')[0]
+    for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i]
+        var title = item.getElementsByClassName('cart-item-title').innerText
+        var price = item.getElementsByClassName('cart-price').innerText
+        var imageSrc = item.getElementsByClassName('cart-item-image').src
+        products.push({
+            'name' : title,
+            'price' : price,
+            'imgsrc' : imageSrc
+        });
+        console.log(title)
+        
+    }
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
     }
     updateCartTotal()
-    addProduct()
+    var test = JSON.parse(localStorage.getItem('products'))
+    
 }
 
-function addProduct(){
-    let products = [];
-    if(localStorage.getItem('products')){
-        products = JSON.parse(localStorage.getItem('products'));
-    }
+function addProduct(event){
+
+    var products = JSON.parse(localStorage.getItem('products'));
     var cartItems = document.getElementsByClassName('cart-items')
-    for (var i = 0; i < cartItems.length; i++) {
-        var item = cartItems[i]
-        var title = item.getElementsByClassName('cart-item-title').innerHTML
-        var price = item.getElementsByClassName('cart-price').innerHTML
-        var imageSrc = item.getElementsByClassName('cart-item-image').src
-        products.push([title, price, imageSrc]);
-        localStorage.setItem('products', JSON.stringify(products));
-    }
+
 }
 
 function removeCartItem(event) {
@@ -96,6 +108,7 @@ function addItemToCart(title, price, imageSrc) {
     cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
     updateCartTotal()
+    console.log(title, price)
 }
 
 
