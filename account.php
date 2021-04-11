@@ -5,22 +5,6 @@
 
 
 <body>
-    <div class="logo"><a href="index.html"><img src="Unloco.png" alt=""></a>
-        <div class="navbar">
-            <nav>
-                <ul>
-                    <li><a href="contact.html">Contact</a></li>
-                 
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="google.html">Google</a></li>
-                    <li><a href="apple.html">Apple</a></li>
-                    <li><a href="samsung.html">Samsung</a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="account.php">Account</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
     <section class= "editbox">
         <header class="accountdetails">
             <h1>Edit Account Details</h1>
