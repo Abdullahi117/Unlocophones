@@ -6,7 +6,7 @@ $firstName = $lastName = $address = $phoneNumber = $username = $email = $passwor
 $firstNameErr = $lastNameErr = $addressErr = $phoneNumberErr= $usernameErr = $emailErr = $password1Err = $password2Err = "";
 
 //establish connection with database
-$mysqli = new mysqli('localhost', 'root', '', 'mydb');
+$mysqli = new mysqli('localhost', 'ics325sp2132', '6735', 'ics325sp2132'); //Jorian's Metrostate database login details.
 if($mysqli->connect_errno) {
     //error if connection fails
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
