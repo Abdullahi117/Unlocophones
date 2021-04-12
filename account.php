@@ -16,12 +16,21 @@ if($mysqli->connect_errno) {
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $test = true;
+   if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $test = true;
     $firstName = $mysqli->real_escape_string($_POST['firstName']);
     $lastName = $mysqli->real_escape_string($_POST['lastName']);
+    $username = $mysqli->real_escape_string($_POST['username']);
+    $email = $mysqli->real_escape_string($_POST['email']);
+    $password = ($_POST['username']);
                    //Udpate Querey 
 $sql =UPDATE customers
 SET first_name = $fistName, last_name=$lastName
 WHERE customer_id =3;
+
+ 
+       
+
                 ?>
 
     
