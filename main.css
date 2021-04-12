@@ -480,3 +480,11 @@ figcaption{
   font-weight: bolder;
 }
 /* END LOGIN/Register CSS */
+/* START ORDER HISTORY PAGE CSS */
+table.order
+{
+    table-layout: auto;
+    width: 100%;
+    text-align: left;
+}
+/* END ORDER HISTORY PAGE CSS */
