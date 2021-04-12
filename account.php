@@ -21,14 +21,6 @@ if($mysqli->connect_errno) {
     $username = $mysqli->real_escape_string($_POST['username']);
     $email = $mysqli->real_escape_string($_POST['email']);
     $password = ($_POST['username']);
-                   //Udpate Querey 
-$sql =UPDATE customers
-SET first_name = $fistName, last_name=$lastName
-WHERE customer_id =3;
-
- 
-       
-
                 ?>
 
     
@@ -56,8 +48,20 @@ WHERE customer_id =3;
 
 
     <button><a href="orderhistory.php">Order History</a></button>
-   
+    
+    
+   <?php
+       
+                          //Udpate Querey 
+$sql =UPDATE customers
+SET first_name = $fistName, last_name=$lastName
+WHERE customer_id =3;
+      $result = mysqli_query($mysqli, $sql);
+       echo "$result";
 
+       
+       
+       ?>
     <?php include "footer.php"; ?>
 
 </body>
