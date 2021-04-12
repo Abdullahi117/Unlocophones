@@ -1,0 +1,9 @@
+DROP table orderdetails;
+DROP table products;
+DROP table warranties;
+DROP table suppliers;
+DROP table brands;
+DROP table orders;
+DROP table shipment;
+DROP table payment;
+DROP table customer;
