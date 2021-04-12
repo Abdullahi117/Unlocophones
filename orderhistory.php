@@ -10,12 +10,12 @@ if($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
-    //Retreive sql query 1
+    //Retreive SQL query 1
     $sql = "SELECT * FROM orders";
     if($result = mysqli_query($mysqli, $sql))
     {
         if(mysqli_num_rows($result) > 0){
-            echo "<table class='order'>";
+            echo '<table class="order">';
                 echo "<tr><h3>ORDERS:</<h3></tr>";
                 echo "<tr>";
                     echo "<th>Order ID</th>";
@@ -48,12 +48,12 @@ if($mysqli->connect_errno) {
 
     echo "<br><br>";
 
-       //Retreive sql query 2
+       //Retreive SQL query 2
        $sql = "SELECT * FROM orderdetails";
        if($result = mysqli_query($mysqli, $sql))
        {
            if(mysqli_num_rows($result) > 0){
-               echo "<table class='order'>";
+            echo '<table class="order">';
                    echo "<tr><h3>ORDER DETAILS:</<h3></tr>";
                    echo "<tr>";
                        echo "<th>Orderdetail ID</th>";
