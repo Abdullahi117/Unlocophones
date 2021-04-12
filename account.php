@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include "header.php"; ?>
+<?php
+include "header.php";
+session_start();
+$firstName = $lastName = $address = $phoneNumber = $username = $email = $password1 = $password2 = "";
+$firstNameErr = $lastNameErr = $addressErr = $phoneNumberErr= $usernameErr = $emailErr = $password1Err = $password2Err = "";
 
+//establish connection with database
+$mysqli = new mysqli('localhost', 'ics325sp2132', '6735', 'ics325sp2132');
+if($mysqli->connect_errno) {
+    //error if connection fails
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+}
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $test = true;
+    $firstName = $mysqli->real_escape_string($_POST['firstName']);
+    $lastName = $mysqli->real_escape_string($_POST['lastName']);
+                   //Udpate Querey 
+$sql =UPDATE customers
+SET first_name = $fistName, last_name=$lastName
+WHERE customer_id =3;
+                ?>
 
+    
+    
 <body>
     <section class= "editbox">
         <header class="accountdetails">
@@ -24,6 +46,7 @@
         </form>
         
     </section>
+
 
     <button><a href="orderhistory.php">Order History</a></button>
    
