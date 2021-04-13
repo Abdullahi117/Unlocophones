@@ -24,7 +24,7 @@ if($mysqli->connect_errno) {
 
    //Udpate Query 
    $sql = "UPDATE customer " .
-   "SET first_name = '$firstName', last_name = '$lastName'" . 
+   "SET first_name = '$firstName', last_name = '$lastName', email = '$email'" . 
    " WHERE customer_id = 4";
 
    if ($mysqli->query($sql) === true) {
