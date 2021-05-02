@@ -39,22 +39,19 @@ if($mysqli->connect_errno) {
 <body>
     <div class="container9">
 
-        <div class="accountinfo">
-           <form class="editform" action="account.php" method="POST">
-
-            <h1>Account Info</h1>
-            <h2>First Name</h2>
-            <input type="text" class="input" value="">
-            <h2>Last Name</h2>
-            <input type="text" class="input" value="">
-            <h2>Email </h2>
-            <input type="text" class="input" value="">
-            <h2>Address</h2>
-            <input type="text" class="input" value="">
-            <h2>Order ID</h2>
-            <input type="text" class="input" value="">
-            <button class="btn">Update</button>
-        </form>
+        <div class="accountinfos">
+            <h1 class="accountinfo">Account Info</h1>
+            <h2 class="fstname">First Name</h2>
+            <input type="text" class="inputt" value="">
+            <h2 class="lstname">Last Name</h2>
+            <input type="text" class="inputt" value="">
+            <h2 class="emala">Email </h2>
+            <input type="text" class="inputt" value="">
+            <h2 class="adressa">Address</h2>
+            <input type="text" class="inputt" value="">
+            <h2 class="ordera">Order ID</h2>
+            <input type="text" class="inputt" value="">
+            <button class="btn1">Update</button>
 
         </div>
 
