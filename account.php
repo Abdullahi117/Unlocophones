@@ -42,15 +42,15 @@ if($mysqli->connect_errno) {
         <div class="accountinfos">
             <h1 class="accountinfo">Account Info</h1>
             <h2 class="fstname">First Name</h2>
-            <input type="text" class="inputt" value="">
+            <input type="text" class="input" value="">
             <h2 class="lstname">Last Name</h2>
-            <input type="text" class="inputt" value="">
+            <input type="text" class="input" value="">
             <h2 class="emala">Email </h2>
-            <input type="text" class="inputt" value="">
+            <input type="text" class="input" value="">
             <h2 class="adressa">Address</h2>
-            <input type="text" class="inputt" value="">
+            <input type="text" class="input" value="">
             <h2 class="ordera">Order ID</h2>
-            <input type="text" class="inputt" value="">
+            <input type="text" class="input" value="">
             <button class="btn1">Update</button>
 
         </div>
