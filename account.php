@@ -60,7 +60,10 @@ if($mysqli->connect_errno) {
 
     </div>
     
+<button><a href="orderhistory.php">Order History</a></button>
 
+
+     <?php include "footer.php"; ?>
 
    
 
