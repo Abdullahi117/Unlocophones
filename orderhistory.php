@@ -38,7 +38,6 @@ if($mysqli->connect_errno) {
                     echo "<td>" . $row['status'] . "</td>";
                 echo "</tr>";
             }
-            echo "</table>";
 
             mysqli_free_result($result);
         } else{
@@ -53,13 +52,7 @@ if($mysqli->connect_errno) {
        if($result = mysqli_query($mysqli, $sql))
        {
            if(mysqli_num_rows($result) > 0){
-            echo '<table class="order">';
-                   echo "<tr><h3>ORDER DETAILS:</<h3></tr>";
                    echo "<tr>";
-                       echo "<th>Orderdetail ID</th>";
-                       echo "<th>Order ID</th>";
-                       echo "<th>Product ID</th>";
-                       echo "<th>QTY</th>";
                        echo "<th>Discount</th>";
                        echo "<th>Color</th>";
                        echo "<th>Total</th>";
@@ -67,10 +60,6 @@ if($mysqli->connect_errno) {
                while ($row = mysqli_fetch_array($result))
                {
                     echo "<tr>";
-                        echo "<td>" . $row['orderdetail_id'] . "</td>";
-                        echo "<td>" . $row['order_id'] . "</td>";
-                        echo "<td>" . $row['product_id'] . "</td>";
-                        echo "<td>" . $row['quantity'] . "</td>";
                         echo "<td>" . $row['discount'] . "</td>";
                         echo "<td>" . $row['color'] . "</td>";
                         echo "<td>$" . $row['total'] . "</td>";
@@ -84,11 +73,7 @@ if($mysqli->connect_errno) {
            }
        } 
    
-
-
-
 mysqli_close($mysqli);
-
 
 echo "<br><br><br><br><br><br><br><br>";
 include "footer.php";
