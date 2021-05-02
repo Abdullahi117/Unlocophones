@@ -35,24 +35,40 @@ if($mysqli->connect_errno) {
 ?>
 
 <?php include "header.php"; ?>
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
 
-    
-    
 <body>
-    <section class= "editbox">
-        <header class="accountdetails">
-            <h1>Edit Account Details</h1>
-        </header>
-        <form class="editform" action="account.php" method="POST">
-            <label for="firstName">First Name: </label>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name...">
-            <label for="lastName">Last Name: </label>
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name...">
-            <label for="email">Email Address: </label>
-            <input type="text" name="email" id="email" placeholder="Email...">
-            <input type="submit" value="Edit">
+    <div class="container9">
+
+        <div class="accountinfo">
+           <form class="editform" action="account.php" method="POST">
+
+            <h1>Account Info</h1>
+            <h2>First Name</h2>
+            <input type="text" class="input" value="">
+            <h2>Last Name</h2>
+            <input type="text" class="input" value="">
+            <h2>Email </h2>
+            <input type="text" class="input" value="">
+            <h2>Address</h2>
+            <input type="text" class="input" value="">
+            <h2>Order ID</h2>
+            <input type="text" class="input" value="">
+            <button class="btn">Update</button>
         </form>
-    </section>
+
+        </div>
+
+    </div>
+    
 
 
     <button><a href="orderhistory.php">Order History</a></button>
