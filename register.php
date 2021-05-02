@@ -2,6 +2,8 @@
 <html lang="en">
 <?php 
 session_start();
+include ("auth_session.php");
+
 $firstName = $lastName = $address = $phoneNumber = $username = $email = $password1 = $password2 = "";
 $firstNameErr = $lastNameErr = $addressErr = $phoneNumberErr= $usernameErr = $emailErr = $password1Err = $password2Err = "";
 
@@ -16,9 +18,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $test = true;
     $firstName = $mysqli->real_escape_string($_POST['firstName']);
     $lastName = $mysqli->real_escape_string($_POST['lastName']);
-    $username = $mysqli->real_escape_string($_POST['username']);
+    $phoneNumber = $mysqli->real_escape_string($_POST['phoneNumber']);
     $email = $mysqli->real_escape_string($_POST['email']);
-    $password = ($_POST['username']);
+    $password1 = $mysqli->real_escape_string($_POST['password1']);
 
     //First Name checker 
     if (empty($_POST["firstName"])) {
@@ -42,25 +44,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $lastNameErr = "Only letters and white space allowed";
         }
     }
-    //Address Checker
-    if (empty($_POST["address"])) {
-        $addressErr = "Address Required";
+    // //Address Checker
+    // if (empty($_POST["address"])) {
+    //     $addressErr = "Address Required";
 
-    }
-    else {
-        $address = test_input($_POST["address"]);
-        //address validation
-        if (!preg_match("/^[a-zA-Z0-9-\/] ?([a-zA-Z0-9-\/]|[a-zA-Z0-9-\/] )*[a-zA-Z0-9-\/]$/", $address)) {
-            $addressErr = "Must Be A Proper Address";
-        }
-    }
+    // }
+    // else {
+    //     $address = test_input($_POST["address"]);
+    //     //address validation
+    //     if (!preg_match("/^[a-zA-Z0-9-\/] ?([a-zA-Z0-9-\/]|[a-zA-Z0-9-\/] )*[a-zA-Z0-9-\/]$/", $address)) {
+    //         $addressErr = "Must Be A Proper Address";
+    //     }
+    // }
     //check phonenumber
     if (empty($_POST["phoneNumber"])) {
         $phoneNumberErr = "Phone Number Required";
 
     }
     else {
-        $phoneNumber = test_input($_POST["address"]);
+        $phoneNumber = test_input($_POST["phoneNumber"]);
         //phone number validation
         if (!preg_match("/^\d{10}$/", $phoneNumber)) {
             $phoneNumberErr = "Please Input 10-digit Phone Number";
@@ -79,22 +81,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }    
 
-    //Password2 confirm checker 
-    if ($password1 != $password2) {
-        $password2Err = "Passwords dont match";
-    }
+    // //Password2 confirm checker 
+    // if ($password1 != $password2) {
+    //     $password2Err = "Passwords dont match";
+    // }
           
 
-    //Username checker 
-    if (empty($_POST["username"])) {
-        $usernameErr = "Userame is required";
-    } 
-    else {
-        $username = test_input($_POST["username"]);
-        if (!preg_match("/^[a-zA-Z0-9]/",$username)) {
-            $usernameErr = "Only letters and numbers allowed";
-        }
-    }
+    // //Username checker 
+    // if (empty($_POST["username"])) {
+    //     $usernameErr = "Userame is required";
+    // } 
+    // else {
+    //     $username = test_input($_POST["username"]);
+    //     if (!preg_match("/^[a-zA-Z0-9]/",$username)) {
+    //         $usernameErr = "Only letters and numbers allowed";
+    //     }
+    // }
     
     //Email checker 
     if (empty($_POST["email"])) {
@@ -107,12 +109,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     //insert sql query
-    $sql = "INSERT INTO customer (first_name, last_name, email) VALUES "
-                . " ('$firstName', '$lastName', '$email')";
+    $sql = "INSERT INTO customer (first_name, last_name, phone, email, password) VALUES "
+                . " ('$firstName', '$lastName', '$phoneNumber', '$email', '$password1')";
 
     //check if query is successful
     if ($mysqli->query($sql) === true) {
-        $_SESSION['message'] = "Registration complete, '$username' added to the database!";
+        $_SESSION['message'] = "Registration complete, '$email' added to the database!";
         header("location: index.html");
     } else {
         $_SESSION['message'] = "User could not be added to the database";
@@ -148,22 +150,16 @@ function test_input($data) {
                         <span class = "error"><?php echo $lastNameErr;?></span>
                     </div>
                     <div>
-                        <label>Address</label>
-                        <input type="text" name="address" placeholder="Address" required>
-                        <br>
-                        <span class = "error"><?php echo $addressErr;?></span>
-                    </div>
-                    <div>
                         <label>Phone Number</label>
                         <input type="text" name="phoneNumber" placeholder="Phone Number" required>
                         <br>
                         <span class = "error"><?php echo $phoneNumberErr;?></span>
                     </div>
                     <div>
-                        <label>Username</label>
-                        <input type="text" name="username" placeholder="Username" required>
+                        <label>Email</label>
+                        <input type="text" name="email" placeholder="Email" required>
                         <br>
-                        <span class = "error"><?php echo $usernameErr;?></span>
+                        <span class = "error"><?php echo $emailErr;?></span>
                     </div>
                     <div>
                         <label>Password</label>
@@ -176,12 +172,6 @@ function test_input($data) {
                         <input type="password" name="password2" placeholder="Confirm Password" required>
                         <br>
                         <span class = "error"><?php echo $password2Err;?></span>
-                    </div>
-                    <div>
-                        <label>Email</label>
-                        <input type="text" name="email" placeholder="Email" required>
-                        <br>
-                        <span class = "error"><?php echo $emailErr;?></span>
                     </div>
                     <div>
                         <input type="submit" name="submit" class="FormButton" value="Register">
