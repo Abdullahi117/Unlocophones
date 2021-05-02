@@ -11,18 +11,18 @@ body{
     box-shadow:2px 5px 20px rgba(119,119,119,.5);
 
 }
-.accountinfo{
+.accountinfos{
     width: 65%;
     margin-left: 28%;
 }
-h1{
+.accountinfo{
     font-family:  sans-serif;
     color: crimson;
     font-size: 1.7rem;
     margin-top: 41px;
     margin-bottom: 36px;
 }
-h2{
+.fstname{
   font-family: sans-serif;
   text-transform: capitalize;
   color: rgb(129, 129, 129);
@@ -31,7 +31,43 @@ h2{
   margin-left: 2px;;
   font-size: 14px;
 }
-.input, p{
+.adressa{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: rgb(129, 129, 129);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: 2px;;
+    font-size: 14px;
+  }
+  .lstname{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: rgb(129, 129, 129);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: 2px;;
+    font-size: 14px;
+  }
+  .emala{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: rgb(129, 129, 129);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: 2px;;
+    font-size: 14px;
+  }
+  .ordera{
+    font-family: sans-serif;
+    text-transform: capitalize;
+    color: rgb(129, 129, 129);
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-left: 2px;;
+    font-size: 14px;
+  }
+.inputt, p{
 border: 0;
 border-bottom: 1px solid crimson;
 width: 80%;
@@ -41,7 +77,7 @@ padding: 7px 0;
 color: #070707;
 outline: none;;
 }
-.btn{
+.btn1{
     font-family: sans-serif;
     font-size: 16px;
     text-transform: uppercase;
