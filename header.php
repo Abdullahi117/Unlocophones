@@ -19,6 +19,12 @@
     <div class="logo" <a href=""><img src="Unloco.png" alt=""></a>
         <div class="navbar">
             <nav>
+                <div class="search-container">
+                    <form method="post">
+                        <input type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
                 <ul>
                 <li><a href="contact.html">Contact</a></li>
                     <li><a href="login.php">Login</a></li>
