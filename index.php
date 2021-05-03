@@ -186,11 +186,10 @@
             <th>Item Price</th>
         </tr>
         <tr>
-            <td>
-                <?php echo $row->name; ?>
-                << /td>
-            <td>
-                <?php echo $row->year_made;</td>
+            
+            <td><?php echo $row->name; ?></td>
+				<td><?php echo $row->year_made;?></td>
+            
 
 </tr>
 
