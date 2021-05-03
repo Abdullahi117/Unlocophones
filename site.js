@@ -31,7 +31,7 @@ function ready() {
 function purchaseClicked(event) {
     var btn = event.target
     var container = btn.parentNode
-    var cartItems = container.getElementsByClassName('cart-items')[0]
+    var cartItems = container.getElementsByClassName('cart-items')
     for (var i = 0; i < cartItems.length; i++) {
         var item = cartItems[i]
         var title = item.getElementsByClassName('cart-item-title').innerText

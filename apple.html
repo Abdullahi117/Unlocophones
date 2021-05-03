@@ -85,10 +85,26 @@
                 <strong class="cart-total-title">Total</strong>
                 <span class="cart-total-price">$0</span>
             </div>
-            <button  class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
+        </section>
+        <section class="checkoutbox">
+            <h1>Checkout Form</h1>
+            <form class = "checkoutform" method="post" target="_self">
+                <label for="name"> Name: </label>
+                <input type="text" name="name" id="name">
+                <label for="address"> Address: </label>
+                <input type="text" name="address" id="address">
+                <label for="city"> City: </label>
+                <input type="text" name="city" id="city">
+                <label for="email"> Email: </label>
+                <input type="text" name="email" id="email">
+                <label for="payment"> Credit Card #: </label>
+                <input type="text" name="payment" id="payment">
+                <button class="btn btn-primary btn-purchase" type="submit">PURCHASE</button>
+            </form>
         </section>
     </main>
     <script src="site.js" async></script>
     </body>
     </html>
    
+

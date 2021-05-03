@@ -379,14 +379,14 @@ table {
 
 .cart-total-title {
     font-weight: bold;
-    font-size: 1.5em;
+    font-size: 20pt;
     color: black;
     margin-right: 20px;
 }
 
 .cart-total-price {
     color: #333;
-    font-size: 1.1em;
+    font-size: 20pt;
 }
 .btn {
     text-align: center;
@@ -398,6 +398,48 @@ table {
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
+}
+
+.checkoutbox {
+    margin: auto;
+    margin-top: 7pc;
+    margin-bottom: 0;
+    text-align: center;
+    border: solid 2px black;
+    width: 50%;
+    background-color: white;
+    clear: both;
+    position: relative;
+}
+.checkoutbox h1 {
+    text-align: left;
+    margin-left: 2pc;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+.checkoutform {
+    width: 600px;
+    text-align: left;
+    margin: 3pc;
+}
+.checkoutform input{
+    width: 90%;
+    margin: 15px;
+    font-size: 12pt;
+    padding: 10px 4px 10px 4px;
+    font-family: serif;
+}
+.checkoutform button [type=submit] {
+    width: 25%;
+    margin: 20px;
+    font-size: 14pt;
+    padding: 10px 4px 10px 4px;
+    font-family: serif;
+    color: hsla(0, 98%, 37%, 0.808);
+    font-weight: bolder;
+}
+.checkoutform input:focus::placeholder {
+    color: transparent;
 }
 /* END ORDER/CART CSS */
 
