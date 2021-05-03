@@ -119,6 +119,7 @@ if(isset($_POST['email']) && isset($_POST['city']) && isset($_POST['address']) &
         echo '<script>console.log("Failed to create order detail")</script>';
         echo "<script>console.log('$total, $quantity, $colors, $product')</script>";
     }
+    header("Location: index.html");
 }
     
 ?>
