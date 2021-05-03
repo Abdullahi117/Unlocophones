@@ -201,13 +201,14 @@
 
 
         </table>
+  <?php
     }
-    <?php
+    <
     else{
         echo"Item is not in inventory";
     }
 }
-
+?>
 
 
 
