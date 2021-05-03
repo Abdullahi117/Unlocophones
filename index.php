@@ -170,10 +170,10 @@
         echo '<script>console.log("Failed to connect to database")</script>';
     }  
     if (isset($_POST['submit'])){
-        $str=$POST["search"];
+        $str=$_POST["search"];
         $sth = $mysqli->prepare("SELECT * FROM 'products' WHERE name = $str'");
     }
-    $sth -> setFetchMode(mysqli:: FETCH_OBJ)
+    $sth -> setFetchMode(mysqli:: FETCH_OBJ);
     $sth -> execute();
 
     if ($row = $sth->fetch())
