@@ -58,7 +58,51 @@
 </body>
 </html>
 
- 
+ <?php 
+    $mysqli = new mysqli('localhost:3306', 'root', '', 'mydb');
+    if($mysqli->connect_errno) {
+        //error if connection fails
+        echo '<script>console.log("Failed to connect to database")</script>';
+    }  
+    if (isset($_POST['submit'])){
+        $str=$POST["product"];
+        $sth = $mysqli->prepare("SELECT * FROM 'products' WHERE name = $str'");
+    }
+    $sth -> setFetchMode(mysqli:: FETCH_OBJ)
+    $sth -> execute();
+
+    if ($row = $sth->fetch())
+    {
+        ?>
+    <br><br><br>
+    <table>
+        <tr>
+            <th>Item Name</th>
+            <th>Item Price</th>
+        </tr>
+        <tr>
+            <td>
+                <?php echo $row->name; ?>
+                << /td>
+            <td>
+                <?php echo $row->year_made;</td>
+
+</tr>
+
+
+
+</tr>
+
+
+
+
+        </table>
+    }
+    <?php
+    else{
+        echo"Item is not in inventory";
+    }
+}
 
 
 
