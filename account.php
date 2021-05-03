@@ -54,14 +54,7 @@ if($mysqli->connect_errno) {
             <button class="btn1">Update</button>
 
         </div>
-
     </div>
-    
 <button><a href="orderhistory.php">Order History</a></button>
-
-
      <?php include "footer.php"; ?>
-
-   
-
 </body>

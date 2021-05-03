@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="logo" <a href=""><img src="Unloco.png" alt=""></a>
+    <div class="logo"><img src="Unloco.png" alt=""></a>
         <div class="navbar">
             <nav>
                  <div class="search-container">
@@ -36,76 +36,72 @@
         <section class="products">
             <div class="phonebox">
                 <img src="iphone12mini.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename"> Iphone 12 Mini </span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename"> iPhone 12 Mini </span> <br>
+                <span class="phoneprice"> $500.00 </span> <!-- <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
 
             </div>
             <div class="phonebox">
                 <img src="iphone11.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename">Iphone 11 Grey</span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename">iPhone 11 Grey</span> <br>
+                <span class="phoneprice"> $500.00 </span> <!-- <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
 
             </div>
             <div class="phonebox">
                 <img src="iphone12silverpromax.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename"> Iphone 12 Pro Max </span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename"> iPhone 12 Pro Max </span> <br>
+                <span class="phoneprice"> $500.00 </span> <!-- <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
             </div>
         </section>
         <section class="products">
             <div class="phonebox">
                 <img src="iphone11ref.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename"> Iphone 11 </span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename"> iPhone 11 </span> <br>
+                <span class="phoneprice"> $500.00 </span> <!-- <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
 
             </div>
             <div class="phonebox">
                 <img src="iphonexr.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename">Iphone XR</span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename">iPhone XR</span> <br>
+                <span class="phoneprice"> $500.00 </span> <!--<br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
 
             </div>
             <div class="phonebox">
                 <img src="iPhoneX.jpg" alt="p1" class="phoneimg"><br>
-                <span class="phonename"> Iphonex</span> 
-                <span class="phoneprice"> $500.00 </span> <br>
-                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button>
+                <span class="phonename"> iPhone X</span> <br>
+                <span class="phoneprice"> $500.00 </span> <!-- <br>
+                <button class="btn btn-primary shop-item-button" type="button"> ADD TO CART</button> -->
             </div>
         </section>
         <br><br>
-        <section class="container content-section">
-            <h2 class="section-header">CART</h2>
-            <div class="cart-row">
-                <span class="cart-item cart-header cart-column">ITEM</span>
-                <span class="cart-price cart-header cart-column">PRICE</span>
-                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-            </div>
-            <div class="cart-items">
-                
-            </div>
-            <div class="cart-total">
-                <strong class="cart-total-title">Total</strong>
-                <span class="cart-total-price">$0</span>
-            </div>
-        </section>
+        
+        
         <section class="checkoutbox">
             <h1>Checkout Form</h1>
-            <form class = "checkoutform" method="post" target="_self">
-                <label for="name"> Name: </label>
-                <input type="text" name="name" id="name">
-                <label for="address"> Address: </label>
-                <input type="text" name="address" id="address">
-                <label for="city"> City: </label>
-                <input type="text" name="city" id="city">
+            <form class="checkoutform" method="post" target="_self">
                 <label for="email"> Email: </label>
-                <input type="text" name="email" id="email">
+                <input type="text" name="email" id="email" required>
+                <label for="address"> Address: </label>
+                <input type="text" name="address" id="address" required>
+                <label for="city"> City: </label>
+                <input type="text" name="city" id="city" required>
+                <label for="product"> Select Your Product </label>
+                <select name = "product" id="product" required>
+                    <option value="iPhone 12 Mini">iPhone 12 Mini</option>
+                    <option value="iPhone 11 Grey">iPhone 11 Grey</option>
+                    <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+                    <option value="iPhone 11">iPhone 11</option>
+                    <option value="iPhone XR">iPhone XR</option>
+                    <option value="iPhone X">iPhone X</option>
+                  </select>
+                <label for="cart-quantity-input">Quantity: </label>
+                <input class="cart-quantity-input" type="number" value= 1>
                 <label for="payment"> Credit Card #: </label>
-                <input type="text" name="payment" id="payment">
+                <input type="text" name="payment" id="payment" required>
                 <button class="btn btn-primary btn-purchase" type="submit">PURCHASE</button>
             </form>
         </section>

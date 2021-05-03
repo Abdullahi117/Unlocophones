@@ -35,7 +35,7 @@ VALUES ('Phones.com', '512 Industrial Ave City of Industry, CA 91745', '55512355
 SELECT * FROM suppliers;
 
 
-INSERT INTO warranties (warranty_id, damagescovered, timeperiod)
+INSERT INTO warranties (damagescovered, timeperiod)
 VALUES ('1', '12');
 INSERT INTO warranties (damagescovered, timeperiod)
 VALUES ('0', '18');
@@ -43,8 +43,24 @@ SELECT * FROM warranties;
 
 
 INSERT INTO products (brand_id, warranty_id, supplier_id, name, year_made, type, colors, carriers, price, warranty)
-VALUES ('3', '1', '1', 'Google Pixel 4a', '2020', 'Phone', 'Black', 'Verizon, GoogleFi', '500.00', '1');
+VALUES ('1', '2', '1', 'Samsung Galaxy S20', '2020', 'Phone', 'Silver, Black', 'T-Mobile', '500.00', '1'), 
+('1', '2', '1', 'Samsung Galaxy Note 2021', '2021', 'Note', 'Gold, Silver', 'Verizon', '500.00', '1'), 
+('1', '2', '1', 'Samsung Galaxy Note 2020', '2020', 'Note', 'Pink, White', 'Sprint', '500.00', '1'), 
+('1', '2', '1', 'Samsung Galaxy S21 Ultra 5G', '2021', 'Phone', 'Emerald, Black', 'T-Mobile', '500.00', '1'), 
+('1', '2', '1', 'Samsung Galaxy S21+ 5G', '2021', 'Phone', 'Silver, Blue', 'Sprint', '500.00', '1'), 
+('1', '2', '1', 'Samsung Galaxy', '2020', 'Phone', 'White, Black', 'Verizon', '500.00', '1'),
+('2', '1', '1', 'iPhone 12 Mini', '2020', 'Phone', 'White, Black', 'Sprint', '500.00', '1'), 
+('2', '1', '1', 'iPhone 11 Grey', '2020', 'Phone', 'Grey, Black', 'Verizon', '500.00', '1'), 
+('2', '1', '1', 'iPhone 12 Pro Max', '2021', 'Phone', 'Gold, Grey', 'Sprint', '500.00', '1'), 
+('2', '1', '1', 'iPhone 11', '2020', 'Phone', 'White, Black', 'Sprint', '500.00', '1'), 
+('2', '1', '1', 'iPhone XR', '2020', 'Phone', 'White, Gold', 'Verizon', '500.00', '1'), 
+('2', '1', '1', 'iPhone X', '2020', 'Phone', 'Pink, Black', 'Sprint', '500.00', '1'), 
+('3', '2', '1', 'Google Pixel 4a', '2020', 'Phone', 'Black', 'Verizon, GoogleFi', '500.00', '1'), 
+('3', '1', '1', 'Google Pixel 4', '2020', 'Phone', 'Grey', 'Verizon, GoogleFi', '500.00', '1'), 
+('3', '2', '1', 'Google Pixel 5', '2020', 'Phone', 'Gold', 'Sprint, GoogleFi', '500.00', '1');
+
 SELECT * FROM products;
+('3', '1', '1', 'Google Pixel 4a', '2020', 'Phone', 'Black', 'Verizon, GoogleFi', '500.00', '1')
 
 
 INSERT INTO orderdetails (order_id, product_id, quantity, discount, color, total)
